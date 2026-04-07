@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Stratégique | SNV Djibouti 2027-2030</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0F4A8A', // Bleu institutionnel santé
+                            light: '#EBF4FF',
+                            green: '#059669', // Vert Djibouti / Espoir
+                            dark: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom timeline styles */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem; /* 20px */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: auto;
+            }
+            .timeline-item:nth-child(odd) .timeline-content {
+                text-align: right;
+                padding-right: 3rem;
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                text-align: left;
+                padding-left: 3rem;
+            }
+        }
+        .hide { display: none; }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <img src="Logo Santé Djibouti.jpg" alt="Logo Ministère de la Santé" class="h-12 w-auto object-contain bg-white rounded shadow-sm p-0.5">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-brand-blue text-lg leading-tight">Ministère de la Santé</span>
+                            <span class="text-xs text-brand-green font-semibold uppercase tracking-wider">République de Djibouti</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#accueil" class="text-gray-600 hover:text-brand-blue font-medium text-sm transition-colors">Accueil</a>
+                    <a href="#contexte" class="text-gray-600 hover:text-brand-blue font-medium text-sm transition-colors">Contexte & IA2030</a>
+                    <a href="#processus" class="text-gray-600 hover:text-brand-blue font-medium text-sm transition-colors">Processus</a>
+                    <a href="#axes" class="text-gray-600 hover:text-brand-blue font-medium text-sm transition-colors">Axes Stratégiques</a>
+                    <a href="#bibliotheque" class="text-gray-600 hover:text-brand-blue font-medium text-sm transition-colors">Médiathèque</a>
+                    <a href="#contact" class="bg-brand-blue text-white px-5 py-2 rounded-full font-medium text-sm hover:bg-blue-800 transition-colors shadow-md">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#accueil" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Accueil</a>
+                <a href="#contexte" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Contexte & IA2030</a>
+                <a href="#processus" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Processus & Roadmap</a>
+                <a href="#axes" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Axes Stratégiques</a>
+                <a href="#bibliotheque" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Médiathèque</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="accueil" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue to-blue-900 z-0">
+            <!-- Overlay Pattern -->
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/30 text-sm font-semibold tracking-wider uppercase mb-6 shadow-sm backdrop-blur-sm">
+                Processus de Planification 2026
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+                Stratégie Nationale de <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-teal-200">Vaccination (SNV) 2027-2030</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-blue-100 font-light mb-10">
+                Plateforme collaborative et documentaire dédiée à l'élaboration de la nouvelle feuille de route vaccinale pour la République de Djibouti, alignée sur l'Agenda d'Immunisation 2030 (IA2030).
+            </p>
+            <div class="flex justify-center gap-4 flex-col sm:flex-row">
+                <a href="#processus" class="bg-brand-green text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-map-signs"></i> Voir la feuille de route
+                </a>
+                <a href="#bibliotheque" class="bg-white text-brand-blue px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-folder-open"></i> Accéder aux documents
+                </a>
+            </div>
+            
+            <!-- Logos institutionnels -->
+            <div class="mt-12 md:mt-16 pt-8 border-t border-white/20 flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                <div class="bg-white p-2 rounded-xl shadow-lg transform hover:scale-105 transition-transform flex items-center justify-center h-20 md:h-24 min-w-[120px]">
+                    <img src="Logo PEV_Djibouti_PNG.jpg" alt="Logo Programme Elargi de Vaccination Djibouti" class="max-h-full w-auto object-contain">
+                </div>
+                <div class="bg-white p-2 rounded-xl shadow-lg transform hover:scale-105 transition-transform flex items-center justify-center h-20 md:h-24 min-w-[120px]">
+                    <img src="who_emro_logo_french.png" alt="Logo Organisation Mondiale de la Santé" class="max-h-full w-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Synthétique -->
+    <section class="relative -mt-12 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-gray-100 border border-gray-100">
+            <div class="text-center sm:px-4">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-50 text-brand-blue mb-3">
+                    <i class="fa-solid fa-file-pdf text-xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-900">4</h3>
+                <p class="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">Documents de référence</p>
+            </div>
+            <div class="text-center sm:px-4 pt-4 sm:pt-0">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-50 text-brand-green mb-3">
+                    <i class="fa-solid fa-list-check text-xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-900">5</h3>
+                <p class="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">Étapes du processus</p>
+            </div>
+            <div class="text-center sm:px-4 pt-4 sm:pt-0">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-purple-50 text-purple-600 mb-3">
+                    <i class="fa-solid fa-users text-xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-900">20+</h3>
+                <p class="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">Parties prenantes (MS, PTF)</p>
+            </div>
+            <div class="text-center sm:px-4 pt-4 sm:pt-0">
+                <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-orange-50 text-orange-500 mb-3">
+                    <i class="fa-solid fa-bullseye text-xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-900">IA2030</h3>
+                <p class="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">Alignement Stratégique</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexte & Justification -->
+    <section id="contexte" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark">Contexte et Enjeux 2027-2030</h2>
+                <div class="w-24 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Bilan -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-10 w-10 rounded bg-blue-100 text-brand-blue flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Leçons de la SNV 2022-2026</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        L'évaluation finale de mars 2026 souligne des avancées majeures mais identifie des défis persistants. L'enjeu principal de la prochaine stratégie est d'adopter une approche transformatrice.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1 mr-3"></i>
+                            <span class="text-gray-700"><strong>Zéro-Dose :</strong> Nécessité d'intensifier le rattrapage des enfants non vaccinés, notamment dans les zones enclavées et chez les populations migrantes.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1 mr-3"></i>
+                            <span class="text-gray-700"><strong>Financement :</strong> Accélérer la transition vers une plus grande autonomie nationale et résoudre les freins administratifs à l'absorption des fonds.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1 mr-3"></i>
+                            <span class="text-gray-700"><strong>Ressources Humaines :</strong> Stabiliser les personnels qualifiés et institutionnaliser les mécanismes de pilotage.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Alignement IA2030 -->
+                <div class="bg-brand-blue rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-10 text-9xl transform translate-x-4 -translate-y-8">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <h3 class="text-2xl font-bold text-white">Alignement IA2030</h3>
+                        </div>
+                        <p class="text-blue-100 mb-6 leading-relaxed">
+                            L’élaboration de la SNV 2027-2030 suit rigoureusement les directives de l'Organisation Mondiale de la Santé (Programme d'Immunisation à l'horizon 2030).
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                                <i class="fa-solid fa-users text-green-400 mb-2 text-xl"></i>
+                                <h4 class="font-bold">Engagement</h4>
+                                <p class="text-sm text-blue-100">Communautaire et demande de vaccination</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                                <i class="fa-solid fa-scale-balanced text-green-400 mb-2 text-xl"></i>
+                                <h4 class="font-bold">Équité</h4>
+                                <p class="text-sm text-blue-100">Ne laisser personne de côté (zéro-dose)</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                                <i class="fa-solid fa-truck-medical text-green-400 mb-2 text-xl"></i>
+                                <h4 class="font-bold">Approvisionnement</h4>
+                                <p class="text-sm text-blue-100">Chaîne du froid et durabilité</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                                <i class="fa-solid fa-chart-pie text-green-400 mb-2 text-xl"></i>
+                                <h4 class="font-bold">Données</h4>
+                                <p class="text-sm text-blue-100">Prise de décision basée sur l'évidence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus & Chronogramme -->
+    <section id="processus" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-green font-semibold uppercase tracking-wider text-sm">Méthodologie</span>
+                <h2 class="text-3xl font-bold text-brand-dark mt-2">Processus d'élaboration (Directives OMS)</h2>
+                <div class="w-24 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="relative timeline-line max-w-4xl mx-auto">
+                
+                <!-- Etape 1 -->
+                <div class="timeline-item relative z-10 mb-12 md:w-1/2 md:pr-12 group">
+                    <div class="absolute left-4 md:left-full md:-translate-x-1/2 top-1 h-6 w-6 rounded-full bg-brand-green border-4 border-white shadow-md z-20 group-hover:scale-125 transition-transform"></div>
+                    <div class="timeline-content pl-14 md:pl-0 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Étape 1</span>
+                        <h4 class="text-lg font-bold text-brand-blue mt-1">Préparation</h4>
+                        <p class="text-sm text-gray-600 mt-2">Constitution d'une équipe efficace d'élaboration de la stratégie et établissement du calendrier officiel de la SNV.</p>
+                        <div class="mt-3 flex items-center text-xs text-gray-500 font-medium">
+                            <i class="fa-regular fa-calendar mr-2"></i> T2 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etape 2 -->
+                <div class="timeline-item relative z-10 mb-12 md:w-1/2 md:ml-auto md:pl-12 group">
+                    <div class="absolute left-4 md:left-0 md:-translate-x-1/2 top-1 h-6 w-6 rounded-full bg-brand-blue border-4 border-white shadow-md z-20 group-hover:scale-125 transition-transform"></div>
+                    <div class="timeline-content pl-14 md:pl-0 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Étape 2</span>
+                        <h4 class="text-lg font-bold text-brand-blue mt-1">Analyse de la situation</h4>
+                        <p class="text-sm text-gray-600 mt-2">Revue documentaire, analyse des données (ECV, GEV, M&E) et identification des goulots d'étranglement.</p>
+                        <div class="mt-3 flex gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs font-medium">En cours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etape 3 -->
+                <div class="timeline-item relative z-10 mb-12 md:w-1/2 md:pr-12 group">
+                    <div class="absolute left-4 md:left-full md:-translate-x-1/2 top-1 h-6 w-6 rounded-full bg-gray-300 border-4 border-white shadow-md z-20 group-hover:scale-125 transition-transform"></div>
+                    <div class="timeline-content pl-14 md:pl-0 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Étape 3</span>
+                        <h4 class="text-lg font-bold text-brand-blue mt-1">Élaboration de la stratégie</h4>
+                        <p class="text-sm text-gray-600 mt-2">Définition et hiérarchisation des objectifs, identification des causes profondes et choix des interventions clés (Innovation, Zéro-Dose).</p>
+                        <div class="mt-3 flex items-center text-xs text-gray-500 font-medium">
+                            <i class="fa-regular fa-calendar mr-2"></i> T3 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etape 4 -->
+                <div class="timeline-item relative z-10 mb-12 md:w-1/2 md:ml-auto md:pl-12 group">
+                    <div class="absolute left-4 md:left-0 md:-translate-x-1/2 top-1 h-6 w-6 rounded-full bg-gray-300 border-4 border-white shadow-md z-20 group-hover:scale-125 transition-transform"></div>
+                    <div class="timeline-content pl-14 md:pl-0 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Étape 4</span>
+                        <h4 class="text-lg font-bold text-brand-blue mt-1">Suivi, Évaluation et Budget</h4>
+                        <p class="text-sm text-gray-600 mt-2">Établissement d'un cadre de Suivi & Évaluation (PSE) et estimation des ressources nécessaires (Costing).</p>
+                        <div class="mt-3 flex items-center text-xs text-gray-500 font-medium">
+                            <i class="fa-regular fa-calendar mr-2"></i> T4 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etape 5 -->
+                <div class="timeline-item relative z-10 md:w-1/2 md:pr-12 group">
+                    <div class="absolute left-4 md:left-full md:-translate-x-1/2 top-1 h-6 w-6 rounded-full bg-gray-300 border-4 border-white shadow-md z-20 group-hover:scale-125 transition-transform"></div>
+                    <div class="timeline-content pl-14 md:pl-0 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Étape 5</span>
+                        <h4 class="text-lg font-bold text-brand-blue mt-1">Approbation</h4>
+                        <p class="text-sm text-gray-600 mt-2">Garantir l'appropriation par les pouvoirs publics et approbation officielle de la stratégie nationale.</p>
+                        <div class="mt-3 flex items-center text-xs text-gray-500 font-medium">
+                            <i class="fa-regular fa-calendar mr-2"></i> T1 2027
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Axes Stratégiques Proposés -->
+    <section id="axes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark">Domaines Stratégiques Prioritaires (Provisoire)</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Structure de réflexion pour les groupes de travail, basée sur les recommandations de l'évaluation finale et les piliers de l'IA2030.</p>
+                <div class="w-24 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Axe 1 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-blue-50 text-brand-blue rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">1. Couverture et Équité</h3>
+                    <p class="text-sm text-gray-600">Atteindre chaque enfant. Ciblage spécifique des populations "zéro-dose", sous-vaccinées, nomades, migrants et clandestins.</p>
+                </div>
+                <!-- Axe 2 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-green-50 text-brand-green rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">2. Engagement Communautaire</h3>
+                    <p class="text-sm text-gray-600">Renforcer le rôle des ASC, gérer les rumeurs (MAPI) et développer des interventions de communication adaptées (Génération de la demande).</p>
+                </div>
+                <!-- Axe 3 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">3. Gestion & Chaîne du froid</h3>
+                    <p class="text-sm text-gray-600">Amélioration de la logistique vaccinale, gestion efficace des vaccins (GEV) et numérisation des stocks aux niveaux DRS et CMH.</p>
+                </div>
+                <!-- Axe 4 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-yellow-50 text-yellow-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-yellow-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">4. Données et Surveillance</h3>
+                    <p class="text-sm text-gray-600">Renforcement du SIS relatif à la vaccination, surveillance épidémiologique des MEV et amélioration de la qualité des données de couverture.</p>
+                </div>
+                <!-- Axe 5 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-red-50 text-red-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">5. Gouvernance et Financement</h3>
+                    <p class="text-sm text-gray-600">Pérennisation financière par l'État, opérationnalisation des comités (CCIA, GTCV) et résolution des freins administratifs.</p>
+                </div>
+                <!-- Axe 6 -->
+                <div class="border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-brand-blue/30 group">
+                    <div class="h-12 w-12 bg-teal-50 text-teal-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">6. Innovation & Résilience</h3>
+                    <p class="text-sm text-gray-600">Mise en œuvre des recommandations du NITAG, stratégies avancées innovantes et préparation aux urgences sanitaires.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Médiathèque / Bibliothèque documentaire -->
+    <section id="bibliotheque" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-dark">Centre de Ressources</h2>
+                    <p class="text-gray-500 mt-2">Documentation classée pour le travail des consultants et comités.</p>
+                </div>
+            </div>
+
+            <!-- Filtres -->
+            <div class="flex flex-wrap gap-2 mb-8" id="filter-buttons">
+                <button class="filter-btn active bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="all">Tous les documents</button>
+                <button class="filter-btn bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="strat">Doc. Stratégiques</button>
+                <button class="filter-btn bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="eval">Évaluations</button>
+                <button class="filter-btn bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="direct">Directives / IA2030</button>
+                <button class="filter-btn bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="se">Suivi & Évaluation</button>
+            </div>
+
+            <!-- Grid de Documents -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="document-grid">
+                
+                <!-- Document 1 -->
+                <div class="doc-card flex bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="strat">
+                    <div class="bg-brand-blue w-2 flex-shrink-0"></div>
+                    <div class="p-5 w-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2 py-1 rounded">Stratégie Nationale</span>
+                                <span class="text-gray-400 text-xs"><i class="fa-regular fa-calendar"></i> 2022</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 leading-tight mb-2">Stratégie Nationale de Vaccination 2022-2026</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">Document cadre précédent de la République de Djibouti détaillant la vision "Un enfant vacciné est un enfant protégé".</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 font-medium">Auteur: MS / IGAD / Gavi / OMS / UNICEF</div>
+                            <button class="text-brand-blue hover:text-blue-800 text-sm font-bold flex items-center gap-1">
+                                Télécharger <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 2 -->
+                <div class="doc-card flex bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="direct">
+                    <div class="bg-brand-green w-2 flex-shrink-0"></div>
+                    <div class="p-5 w-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-green-50 text-green-700 text-xs font-semibold px-2 py-1 rounded">Lignes Directrices</span>
+                                <span class="text-gray-400 text-xs"><i class="fa-regular fa-calendar"></i> Août 2021</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 leading-tight mb-2">Lignes directrices : Élaboration d'une SNV</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">Méthodologie officielle OMS/IA2030 en 5 étapes pour préparer, analyser, élaborer et budgétiser la stratégie.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 font-medium">Auteur: OMS / IA2030</div>
+                            <button class="text-brand-blue hover:text-blue-800 text-sm font-bold flex items-center gap-1">
+                                Télécharger <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 3 -->
+                <div class="doc-card flex bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="eval">
+                    <div class="bg-purple-500 w-2 flex-shrink-0"></div>
+                    <div class="p-5 w-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-2 py-1 rounded">Rapport (Draft)</span>
+                                <span class="text-gray-400 text-xs"><i class="fa-regular fa-calendar"></i> Mars 2026</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 leading-tight mb-2">Rapport d'évaluation finale SNV 2022-2026</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">Bilan des performances, analyse de la gouvernance, goulots d'étranglement et recommandations clés pour 2027-2030.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 font-medium">Auteur: Ministère de la Santé</div>
+                            <button class="text-brand-blue hover:text-blue-800 text-sm font-bold flex items-center gap-1">
+                                Télécharger <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 4 -->
+                <div class="doc-card flex bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="se">
+                    <div class="bg-yellow-500 w-2 flex-shrink-0"></div>
+                    <div class="p-5 w-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-yellow-50 text-yellow-700 text-xs font-semibold px-2 py-1 rounded">Cadre Logique</span>
+                                <span class="text-gray-400 text-xs"><i class="fa-regular fa-calendar"></i> Août 2024</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 leading-tight mb-2">Plan de Suivi et Évaluation SNV 2022-2026</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">Matrice des indicateurs, mécanismes de suivi, définition des cibles (zéro-dose, couverture Penta/MCV).</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 font-medium">Auteur: Dalberg / Gavi / UNICEF / OMS</div>
+                            <button class="text-brand-blue hover:text-blue-800 text-sm font-bold flex items-center gap-1">
+                                Télécharger <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder Tool -->
+                <div class="doc-card flex bg-white rounded-xl border border-dashed border-gray-300 shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="se">
+                    <div class="bg-gray-300 w-2 flex-shrink-0"></div>
+                    <div class="p-5 w-full flex flex-col justify-between opacity-70">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded">Outil (À venir)</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-700 leading-tight mb-2">Outil de chiffrage (Costing Tool) 2027-2030</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2 mb-4">Emplacement réservé pour le canevas financier qui sera généré lors de l'étape 4 du processus.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                            <div class="text-xs text-gray-500 font-medium">Auteur: TBD</div>
+                            <button disabled class="text-gray-400 text-sm font-bold flex items-center gap-1 cursor-not-allowed">
+                                Non disponible <i class="fa-solid fa-lock"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Acteurs et Gouvernance -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark">Acteurs & Gouvernance</h2>
+                <div class="w-24 h-1 bg-brand-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <!-- Niveau 1 -->
+                <div class="w-full max-w-lg mb-8">
+                    <div class="bg-brand-blue text-white text-center p-4 rounded-xl shadow-lg border-b-4 border-blue-900">
+                        <h3 class="font-bold text-lg">Comité de Coordination Inter-Agence (CCIA)</h3>
+                        <p class="text-xs text-blue-200 mt-1">Supervision politique et validation</p>
+                    </div>
+                </div>
+                <!-- Line -->
+                <div class="h-8 w-px bg-gray-300 mb-8"></div>
+                <!-- Niveau 2 -->
+                <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white border border-gray-200 text-center p-4 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-brand-blue">Ministère de la Santé / PEV</h3>
+                        <p class="text-sm text-gray-500 mt-1">Coordination technique, direction du processus et rédaction institutionnelle.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 text-center p-4 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-brand-green">Partenaires Techniques & Financiers</h3>
+                        <p class="text-sm text-gray-500 mt-1">Gavi, OMS, UNICEF, Dalberg, USAID, IOM. Appui technique et budgétaire.</p>
+                    </div>
+                </div>
+                <!-- Line -->
+                <div class="h-8 w-px bg-gray-300 mb-8"></div>
+                <!-- Niveau 3 -->
+                <div class="w-full max-w-5xl flex flex-wrap justify-center gap-6">
+                    <div class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] bg-gray-50 border border-gray-200 text-center p-4 rounded-xl hover:shadow-md transition-shadow">
+                        <div class="text-brand-blue mb-2"><i class="fa-solid fa-syringe text-xl"></i></div>
+                        <h4 class="font-semibold text-gray-700 text-sm">GT 1 : Prestation de services & Équité</h4>
+                    </div>
+                    <div class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] bg-gray-50 border border-gray-200 text-center p-4 rounded-xl hover:shadow-md transition-shadow">
+                        <div class="text-brand-green mb-2"><i class="fa-solid fa-users text-xl"></i></div>
+                        <h4 class="font-semibold text-gray-700 text-sm">GT 2 : Génération de la demande</h4>
+                    </div>
+                    <div class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] bg-gray-50 border border-gray-200 text-center p-4 rounded-xl hover:shadow-md transition-shadow">
+                        <div class="text-purple-600 mb-2"><i class="fa-solid fa-truck-fast text-xl"></i></div>
+                        <h4 class="font-semibold text-gray-700 text-sm">GT 3 : Chaîne d'approvisionnement</h4>
+                    </div>
+                    <div class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] bg-gray-50 border border-gray-200 text-center p-4 rounded-xl hover:shadow-md transition-shadow">
+                        <div class="text-yellow-600 mb-2"><i class="fa-solid fa-chart-line text-xl"></i></div>
+                        <h4 class="font-semibold text-gray-700 text-sm">GT 4 : Surveillance & Données</h4>
+                    </div>
+                    <div class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] bg-gray-50 border border-gray-200 text-center p-4 rounded-xl hover:shadow-md transition-shadow">
+                        <div class="text-red-600 mb-2"><i class="fa-solid fa-landmark text-xl"></i></div>
+                        <h4 class="font-semibold text-gray-700 text-sm">GT 5 : Gouvernance & Financement</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Coordination -->
+    <section id="contact" class="py-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Secrétariat Technique de la SNV</h2>
+                    <p class="text-gray-400 mb-8">
+                        Pour toute question relative au processus d'élaboration de la Stratégie Nationale de Vaccination 2027-2030, ou pour soumettre des documents à la base de données, veuillez contacter l'unité de coordination.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 mr-4 text-brand-green text-xl"></i>
+                            <div>
+                                <h4 class="font-semibold">Adresse institutionnelle</h4>
+                                <p class="text-gray-400 text-sm">Ministère de la Santé, Direction de la Promotion de la Santé, PEV, Djibouti</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-envelope mt-1 mr-4 text-brand-green text-xl"></i>
+                            <div>
+                                <h4 class="font-semibold">Email de coordination</h4>
+                                <p class="text-gray-400 text-sm">coordination-snv@sante.gov.dj (Fictif)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-4 bg-white/5 rounded-lg border border-white/10">
+                        <p class="text-xs text-gray-400">
+                            <i class="fa-solid fa-lock mr-1"></i> Plateforme à usage interne et restreint aux parties prenantes du processus d'élaboration de la SNV. Confidentialité requise sur les documents de travail non validés.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Fictif -->
+                <div class="bg-white rounded-xl p-8 text-gray-800 shadow-xl">
+                    <h3 class="text-xl font-bold mb-6">Envoyer un message ou un livrable</h3>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Ce formulaire est une maquette. La fonctionnalité d\'envoi sera intégrée ultérieurement.');">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                                <input type="text" class="w-full border-gray-300 rounded-md shadow-sm border p-2 focus:ring-brand-blue focus:border-brand-blue" placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Institution</label>
+                                <input type="text" class="w-full border-gray-300 rounded-md shadow-sm border p-2 focus:ring-brand-blue focus:border-brand-blue" placeholder="OMS, Gavi, MS...">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Objet</label>
+                            <select class="w-full border-gray-300 rounded-md shadow-sm border p-2 focus:ring-brand-blue focus:border-brand-blue bg-white">
+                                <option>Soumission de livrable (Draft)</option>
+                                <option>Question méthodologique</option>
+                                <option>Mise à jour du chronogramme</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full border-gray-300 rounded-md shadow-sm border p-2 focus:ring-brand-blue focus:border-brand-blue" placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-blue text-white font-bold py-3 px-4 rounded-md hover:bg-blue-800 transition-colors">
+                            Envoyer au secrétariat
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 - Ministère de la Santé - République de Djibouti. Plateforme d'élaboration SNV.</p>
+            <p class="mt-2 text-xs">Conçu en alignement avec l'Agenda d'Immunisation 2030 (IA2030).</p>
+        </div>
+    </footer>
+
+    <!-- Scripts pour l'interactivité -->
+    <script>
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar styling on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Logique de filtrage documentaire
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const docCards = document.querySelectorAll('.doc-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state of buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-blue', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-600');
+                });
+                btn.classList.remove('bg-white', 'text-gray-600');
+                btn.classList.add('bg-brand-blue', 'text-white');
+
+                // Filter logic
+                const filterValue = btn.getAttribute('data-filter');
+                
+                docCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
